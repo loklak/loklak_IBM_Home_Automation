@@ -47,12 +47,12 @@ print
 #####################################
 #FILL IN THESE DETAILS
 #####################################     
-organization = "ihd64f"
-deviceType = "RaspberryPi"
-deviceId = "b827eb42b125"
+organization = ""
+deviceType = ""
+deviceId = ""
 appId = str(uuid.uuid4())
 authMethod = "token"
-authToken = "aRdqQAEaq&u+YN2PYw"
+authToken = ""
 
 # Initialize the device client.
 try:

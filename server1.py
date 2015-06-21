@@ -33,16 +33,16 @@ def myAppEventCallback(event):
 #####################################
 #FILL IN THESE DETAILS
 #####################################     
-organization = "ihd64f"
-deviceType = "RaspberryPi"
-deviceId = "b827eb42b125"
+organization = ""
+deviceType = ""
+deviceId = ""
 appId = str(uuid.uuid4())
 authMethod = "token"
-authToken = "aRdqQAEaq&u+YN2PYw"
+authToken = ""
 
 ##API TOKEN AND KEY
-authkey = "a-ihd64f-0ewoxrypp7"
-authtoken = "K*B9YI7E7@vGUJh!J5"
+authkey = ""
+authtoken = ""
 # Initialize the application client.
 
 try:
