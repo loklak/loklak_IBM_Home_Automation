@@ -1,5 +1,5 @@
 # IoT
-Internet of Things based home automation project using IBM IoTF platform
+Internet of Things based home automation project using IBM IoTF platform.
 Please follow the tutorial at:  http://diyhacking.com/iot-home-automation-ibm-iotf/
 
 This repository consists of two scripts:
