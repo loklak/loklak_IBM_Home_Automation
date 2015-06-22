@@ -102,5 +102,8 @@ while(True):
 			print ("Connect attempt failed: "+str(e))
 			sys.exit()
 
+
+	else:
+		print "Not a valid command"
 appCli.disconnect()
 
