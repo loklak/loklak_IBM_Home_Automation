@@ -1,6 +1,6 @@
 # IoT
 Internet of Things based home automation project using IBM IoTF platform.
-Please follow the tutorial at:  http://diyhacking.com/iot-home-automation-ibm-bluemix/
+Please follow the tutorial at:  http://diyhacking.com/raspberry-pi-home-automation-ibm-bluemix/
 
 This repository consists of two scripts:
 client.py - This python script runs on the Raspberry Pi. It accepts command from the server 
