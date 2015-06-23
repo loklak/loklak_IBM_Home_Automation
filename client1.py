@@ -10,8 +10,9 @@ import time
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(3,GPIO.OUT,pull_up_down=GPIO.PUD_DOWN)
-GPIO.setup(7,GPIO.IN,pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(7,GPIO.IN,pull_up_down=GPIO.PUD_UP)
 GPIO.setup(11,GPIO.IN)
+ls='OFF'
 
 try:
 	import ibmiotf.application
@@ -68,8 +69,12 @@ deviceCli.commandCallback = myCommandCallback
 #x=0
 while(1):
 	lightStatus=GPIO.input(7)
+	if lightStatus==0:
+		ls='ON'
+	else:
+		ls='OFF'
 	intruder=GPIO.input(11)
-	data = { 'LightStatus': lightStatus, 'Intruder': intruder}
+	data = { 'LightStatus': ls, 'Intruder': intruder}
         deviceCli.publishEvent("status", data)
 	#x=x+1
 	time.sleep(1)
