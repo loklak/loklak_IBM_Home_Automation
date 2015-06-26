@@ -25,10 +25,8 @@ except ImportError:
 
 
 def myAppEventCallback(event):
-	y=0
-	while(y<1):
-		print("Received live data from %s (%s) sent at %s: %s" % (event.deviceId, event.deviceType, event.timestamp.strftime("%H:%M:%S"), json.dumps(event.data)))
-		y=y+1
+	print("Received live data from %s (%s) sent at %s: %s" % (event.deviceId, event.deviceType, event.timestamp.strftime("%H:%M:%S"), json.dumps(event.data)))
+		
 
 #####################################
 #FILL IN THESE DETAILS
@@ -73,9 +71,8 @@ while(True):
 			while(x<1):
 				appCli.deviceEventCallback = myAppEventCallback
 				appCli.subscribeToDeviceEvents(event="status")
-				print "testing"
 				x=x+1
-				time.sleep(1)
+				
 
 		
 			
@@ -93,9 +90,11 @@ while(True):
 		
 			appCli.publishCommand(deviceType, deviceId, "off", commandData)
 			appCli.publishEvent(deviceType, deviceId,"status",commandData)
-			while(1):
+			y=0
+			while(y<1):
 				appCli.deviceEventCallback = myAppEventCallback
 				appCli.subscribeToDeviceEvents(event="status")
+				y=y+1
 		
 			
 		except Exception as e:
