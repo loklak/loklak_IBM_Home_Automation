@@ -6,7 +6,6 @@ import pprint
 import uuid
 from uuid import getnode as get_mac
 
-
 try:
 	import ibmiotf.application
 	import ibmiotf.device

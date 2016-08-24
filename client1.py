@@ -4,6 +4,15 @@ import sys
 import pprint
 import uuid
 from uuid import getnode as get_mac
+from loklak import Loklak
+import string
+import random
+
+# Global loklak object
+loklakConnectionObject = Loklak()
+
+def generateID():
+	return ''.join(random.sample(string.letters*12,12))
 
 import RPi.GPIO as GPIO
 import time
@@ -32,6 +41,12 @@ except ImportError:
 
 
 def myAppEventCallback(event):
+	params = {}
+	params['id_str'] = generateID()
+	params['source_type'] = 'GENERIC'
+	params['screen_name'] = 'iothomeautomation'
+	params['text'] = 'Received live data from ' + event.deviceId + event.deviceType + ' sent at ' + event.timestamp.strftime("%H:%M:%S")
+	loklakConnectionObject.push(params)
 	print("Received live data from %s (%s) sent at %s: hello=%s x=%s" % (event.deviceId, event.deviceType, event.timestamp.strftime("%H:%M:%S"), data['hello'], data['x']))
 
 def myCommandCallback(cmd):
